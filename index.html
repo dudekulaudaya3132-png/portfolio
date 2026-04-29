@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Udayasree | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      color: darkorange;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+      text-decoration-color: darkorange;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      padding: 0 100px;
+    }
+
+    .logo {
+      width: 40%;
+      font-size: 30px;
+      font-weight: 600;
+      color: darkorange;
+    }
+
+    .menu-bar {
+      width: 60%;
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .menu-bar li {
+      font-size: 20px;
+    }
+
+    .navbar-menu {
+      display: none;
+    }
+
+    .sec1 {
+      display: flex;
+      height: 90vh;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .sec-1-1 {
+      margin-left: 100px;
+    }
+
+    .sec-1-1 img {
+      width: 400px;
+      border-radius: 50%;
+    }
+
+    .sec-1-2 {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sec-1-2-1 {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: darkorange;
+    }
+
+    .sec-1-2-3 {
+      font-weight: 600;
+      font-size: 22px;
+      text-align: justify;
+    }
+
+    p {
+      font-size: 18px;
+      width: 90%;
+    }
+
+    .btns {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btns button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btns > :nth-child(1) {
+      background-color: transparent;
+      border: 2px solid black;
+    }
+
+    .btns > :nth-child(1):hover {
+      background-color: black;
+      color: white;
+      border-color: darkorange;
+    }
+
+    .btns > :nth-child(2) {
+      background-color: black;
+      color: white;
+      border: 2px solid black;
+    }
+
+    .btns > :nth-child(2):hover {
+      background-color: darkorange;
+    }
+
+    .sec2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .sec-2-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .sec-2-1 > :nth-child(1) {
+      font-weight: 600;
+    }
+
+    .sec-2-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .sec-2-2-1 img {
+      width: 300px;
+      border-radius: 50%;
+    }
+
+    /* Media Queries */
+    @media(max-width:1024px) {
+      .navbar {
+        display: none;
+      }
+
+      .navbar-menu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hamburger {
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+        z-index: 1000;
+      }
+
+      .hamburger i {
+        font-size: 35px;
+        padding: 4px;
+      }
+
+      .navbar-menu .logo {
+        margin-top: 20px;
+        padding-left: 30px;
+      }
+
+      .navbar-menu .menu-bar {
+        flex-direction: column;
+        background-color: darkorange;
+        position: fixed;
+        right: 0;
+        top: 70px;
+        padding: 10px;
+        gap: 10px;
+        margin-right: -700px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-menu .menu-bar.show {
+        margin-right: 0px;
+      }
+
+      .navbar-menu .menu-bar li {
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+        font-weight: 600;
+      }
+
+      .sec1 {
+        flex-direction: column;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        
+      }
+
+      .sec-1-1 {
+        margin-left: 0px;
+      }
+
+      .sec-1-1 img {
+        width: 300px;
+      }
+
+      .sec-1-2 {
+        align-items: center;
+        padding-bottom: 50px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .logo {
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Udayasree Dudekula</div>
+    <ul class="menu-bar">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Responsive Navbar -->
+  <nav class="navbar-menu">
+    <div class="logo">Udayasree</div>
+    <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+    <ul class="menu-bar">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#Skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section 1: Home -->
+  <section class="sec1">
+    <div class="sec-1-1">
+      <img src="udaya fig.jpg" alt="My photo" />
+    </div>
+    <div class="sec-1-2">
+      <span class="sec-1-2-1">Hello, I'm</span>
+      <h1>Udayasree</h1>
+      <span class="sec-1-2-3">Web Developer</span>
+      <p>I am a passionate and dedicated individual with a strong interest in web development. I strive to create innovative and effective solutions. I enjoy learning new technologies and continuously improving my abilities to deliver high-quality results. This portfolio showcases some of my recent work, reflecting my commitment to excellence and creativity.</p>
+      <div class="btns">
+        <a href="Udayasree Resume.pdf" download><button>Download CV</button></a>
+        <button onclick="window.location.href='tel:+919014663132'">Contact</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: About -->
+   <section style="padding: 40px; text-align: center; font-family: Arial, sans-serif;" id="about">
+  <h2 style="color: darkorange;">About Me</h2>
+    <img src="udaya fig.jpg" alt="Udayasree" style="width: 150px; border-radius: 50%; margin: 20px 0;">
+  <h3>I'm Udayasree</h3>
+  <p style="max-width: 600px; margin: 0 auto;">
+    I'm a passionate Computer Science and Engineering student with basic fundamentals in programming,data structures,and software development.I enjoy solving real-world problems using technology and i have a  basic knowledge in python,java and i develop a website by usimg Html,Css and Django(framework).I love learning new things and solving problems with code.
+  </p>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Education</title>
+  <style>
+    #education {
+      background-color: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #education h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .education-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .education-item {
+      background-color: #ffffff;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      text-align: left;
+    }
+
+    .education-item h3 {
+      font-size: 20px;
+      color: #2c3e50;
+    }
+
+    .education-institute {
+      font-weight: bold;
+      margin-top: 5px;
+      color: #e7880be5;
+    }
+
+    .education-duration {
+      color: #eb0f0faf;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .education-description {
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="education">
+    <h2>🎓 Education</h2>
+    <div class="education-container">
+      <div class="education-item">
+        <h3>Bachelor of Technology in Computer Science(B.Tech)</h3>
+        <p class="education-institute">College : SVR Engineering College</p>
+        <p class="education-duration">Years : 2022 - 2026</p>
+        <p class="education-duration">CGPA : 74%(current)</p>
+        <p class="education-description">Focused on web development, data structures, and software Designer.</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Intermediate - MPC</h3>
+        <p class="education-institute"> College : GOVT Junior College</p>
+        <p class="education-duration"> Years : 2020 - 2022</p>
+        <p class="education-duration">CGPA : 78%</p>
+        <p class="education-description">Completed with a strong academic record in Mathematics, Physics, and Chemistry.</p>
+      </div>
+
+      <div class="education-item">
+        <h3>SSC</h3>
+        <p class="education-institute">College : Z P High School</p>
+        <p class="education-duration">Completed : 2020</p>
+        <p class="education-duration">CGPA : 96%</p>
+        <p class="education-description">Secured good grades and participated in various science and tech activities.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Block</title>
+  <style>
+    /* Skills Section */
+    #skills {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px 20px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #skills h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .skill-bar {
+      background: #ddd;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .skill-level {
+      height: 100%;
+      text-align: right;
+      padding-right: 5px;
+      color: white;
+      font-size: 0.8rem;
+      line-height: 12px;
+      border-radius: 6px;
+    }
+
+    /* Different colors for each skill */
+    .Html { background: #ff5733; width: 70%; }
+    .Css { background: #2965f1; width: 55%; }
+    .Javascript { background: #e509aadb; color: #333; width: 20%; }
+    .React { background: #0de72e; color: #333; width: 30%; }
+    .Angular { background: #c00af7; color: #333; width: 30%; }
+    .Django { background: #f0db4f; color: #333; width: 30%; }
+    
+    .Python { background: #eb0707; width: 40%; }
+  </style>
+</head>
+<body>
+
+<section id="skills">
+  <h2>💡 Skills</h2>
+
+  <div class="skill">
+    <div class="skill-name">Html</div>
+    <div class="skill-bar">
+      <div class="skill-level Html">70%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Css</div>
+    <div class="skill-bar">
+      <div class="skill-level Css">55%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Javascript</div>
+    <div class="skill-bar">
+      <div class="skill-level Javascript">20%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">React</div>
+    <div class="skill-bar">
+      <div class="skill-level React">30%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Angular</div>
+    <div class="skill-bar">
+      <div class="skill-level Angular">30%</div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Django</div>
+    <div class="skill-bar">
+      <div class="skill-level Django">30%</div>
+    </div>
+  </div>
+
+  
+
+  <div class="skill">
+    <div class="skill-name">Python</div>
+    <div class="skill-bar">
+      <div class="skill-level Python">40%</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+
+<!-- Section 4: projects -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Projects</title>
+  <style>
+    /* Projects Section */
+    #projects {
+      padding: 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #projects h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .project-card {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .project-card h3 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #007BFF;
+      padding: 8px 16px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.2s ease;
+    }
+
+    .project-card a:hover {
+      background-color: #0056b3;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <section id="projects">
+    <h2>💻 Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio to showcase my skills and projects using HTML and CSS.</p>
+        <a href= "Screenshot (19).png" target="_blank">View Project</a>
+      </div>
+
+      
+  </section>
+
+
+  <!-- Section 4: Certificates -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Certificates</title>
+  <style>
+    /* Certificates Section */
+    #certificate {
+      padding: 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #certificate h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .certificate-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .certificate-card {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .certificate-card h3 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .certificate-card p {
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .certificate-card a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #007BFF;
+      padding: 8px 16px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.2s ease;
+    }
+
+    .certificate-card a:hover {
+      background-color: #0056b3;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <section id="certificate">
+    <h2> Certificates</h2>
+    <div class="certificate-container">
+      <div class="certificate-card">
+        <h3>Certificates</h3>
+        <p>A responsive personal portfolio to showcase my skills and projects using HTML and CSS.</p>
+        <a href= "Rooman_Certificate - 05b5.pdf" target="_blank">View Project</a>
+      </div>
+
+      
+  </section>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Section</title>
+
+  <style>
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .contact-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-container {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form label {
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+
+      <h2>📬 Contact Me</h2>
+      <p>If you’d like to work together or just say hi, feel free to reach out!</p>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong>
+          <a href="mailto:dudekulaudaya3132@gmail.com">
+            dudekulaudaya3132@gmail.com
+          </a>
+        </p>
+
+        <p><strong>Phone:</strong>
+          <a href="tel:+919014663132">
+            +91 9014663132
+          </a>
+        </p>
+
+        <p><strong>Location:</strong> Nandyal, India</p>
+      </div>
+
+      <!-- Form -->
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" maxlength="50" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" maxlength="50" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" maxlength="500" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
